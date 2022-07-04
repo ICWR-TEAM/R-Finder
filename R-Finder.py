@@ -15,7 +15,7 @@ print("""
 =================================================================
 """)
 
-import ssl, random, socket, warnings
+import ssl, random, socket, atexit, warnings
 from sys import stdout
 from argparse import ArgumentParser
 from multiprocessing.pool import ThreadPool
@@ -23,6 +23,16 @@ from multiprocessing.pool import ThreadPool
 warnings.filterwarnings("ignore")
 
 class finder:
+
+    def atExitFunc(self):
+
+        if self.result != '':
+
+            print(self.result)
+
+        else:
+
+            print("[-] No result")
 
     def percentageProc(self):
 
@@ -84,6 +94,8 @@ class finder:
         stdout.flush()
 
     def __init__(self):
+
+        atexit.register(self.atExitFunc)
 
         print("[*] R-Finder Running")
 
