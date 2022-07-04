@@ -98,8 +98,6 @@ class finder:
 
     def __init__(self):
 
-        print("[*] R-Finder Running")
-
         self.procDone = 0
         self.result = ""
         parser = ArgumentParser()
@@ -108,6 +106,8 @@ class finder:
         parser.add_argument("-t", "--thread", required = True, type = int)
         parser.add_argument("-d", "--timeout", required = True, type = int)
         self.args = parser.parse_args()
+
+        print("[*] R-Finder Running")
 
         self.totalProc = len(open(self.args.list).read().splitlines())
 
