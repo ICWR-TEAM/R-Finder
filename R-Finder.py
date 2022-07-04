@@ -26,6 +26,9 @@ class finder:
 
     def atExitFunc(self):
 
+        print("\n")
+        print("[*] Result:\n")
+
         if self.result != '':
 
             print(self.result)
@@ -95,8 +98,6 @@ class finder:
 
     def __init__(self):
 
-        atexit.register(self.atExitFunc)
-
         print("[*] R-Finder Running")
 
         self.procDone = 0
@@ -111,6 +112,8 @@ class finder:
         self.totalProc = len(open(self.args.list).read().splitlines())
 
         print("[*] Finding...")
+
+        atexit.register(self.atExitFunc)
 
         ThreadPool(self.args.thread).map(self.check, open(self.args.list).read().splitlines())
 
