@@ -26,10 +26,8 @@ class finder:
 
     def percentageProc(self):
 
-        self.proc_done += 1
-
-        total = len(open(self.args.list).read().splitlines())
-        self.processCount = int(self.proc_done / total * 100)
+        self.procDone += 1
+        self.processCount = int(self.procDone / self.totalProc * 100)
 
     def useragent(self):
 
@@ -89,7 +87,7 @@ class finder:
 
         print("[*] R-Finder Running")
 
-        self.proc_done = 0
+        self.procDone = 0
         self.result = ""
         parser = ArgumentParser()
         parser.add_argument("-x", "--target", required = True)
@@ -97,6 +95,8 @@ class finder:
         parser.add_argument("-t", "--thread", required = True, type = int)
         parser.add_argument("-d", "--timeout", required = True, type = int)
         self.args = parser.parse_args()
+
+        self.totalProc = len(open(self.args.list).read().splitlines())
 
         print("[*] Finding...")
 
