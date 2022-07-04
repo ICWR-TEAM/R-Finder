@@ -26,11 +26,10 @@ class finder:
 
     def percentageProc(self):
 
+        self.proc_done += 1
+
         total = len(open(self.args.list).read().splitlines())
-
-        processCount = int(self.proc_done / total * 100)
-
-        return "{}".format(processCount)
+        self.processCount = int(self.proc_done / total * 100)
 
     def useragent(self):
 
@@ -81,9 +80,9 @@ class finder:
 
             pass
 
-        self.proc_done += 1
+        self.percentageProc()
 
-        stdout.write("\r[*] Process : {}%".format(self.percentageProc()))
+        stdout.write("\r[*] Process : {}%".format(self.processCount))
         stdout.flush()
 
     def __init__(self):
