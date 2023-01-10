@@ -118,15 +118,4 @@ class finder:
 
         ThreadPool(self.args.thread).map(self.check, open(self.args.list).read().splitlines())
 
-        print("\n")
-        print("[*] Result:\n")
-
-        if self.result != '':
-
-            print(self.result)
-
-        else:
-
-            print("[-] No result")
-
 finder() if __name__ == "__main__" else exit()
