@@ -85,7 +85,7 @@ class finder:
 
             if ("200" in response):
 
-                print("[+] {}/{}\n".format(self.args.target, path))
+                print("\n[+] {}/{}\n".format(self.args.target, path))
                 self.result += "[+] {}/{}\n".format(self.args.target, path)
 
         except:
