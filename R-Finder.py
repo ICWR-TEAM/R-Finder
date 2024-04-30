@@ -110,7 +110,7 @@ class finder:
 
         print("[*] R-Finder Running")
 
-        self.totalProc = len(open(self.args.list).read().splitlines())
+        self.totalProc = len(open(self.args.list, encoding="utf8", errors="ignore").read().splitlines())
 
         print("[*] Finding...")
 
