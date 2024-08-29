@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # R-Finder ( File & Open Directory finder ) - R&D ICWR
 
-print("""
+print(r"""
  /$$$$$$$        /$$$$$$$$/$$               /$$                  
 | $$__  $$      | $$_____|__/              | $$                  
 | $$  \ $$      | $$      /$$/$$$$$$$  /$$$$$$$ /$$$$$$  /$$$$$$ 
