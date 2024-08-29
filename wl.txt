@@ -94,6 +94,7 @@ sftp-config.json
 .well-known/uma2-configuration
 .well-known/void
 .well-known/webfinger
+home/000~ROOT~000/
 0
 00
 01
