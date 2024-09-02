@@ -37,6 +37,7 @@ sftp-config.json
 .svn
 .svn/entries
 .svnignore
+.vscode
 .swf
 .web
 .well-known/acme-challenge
